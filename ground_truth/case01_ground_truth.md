@@ -1,0 +1,16 @@
+# SEALED GROUND TRUTH - Case 01 (do not open before Week 11)
+- Generated packets: 1401
+- Scan: 192.168.56.10 -> 192.168.56.20, source port 51234, 13 ports [21, 22, 23, 25, 53, 80, 110, 111, 139, 443, 445, 3306, 8080]; open = [22, 80]; 2026-11-02 09:00:00.000Z .. 2026-11-02 09:00:00.649Z
+- Brute force: 36 failed SSH connections to port 22, 4 parallel workers, 1 guess per connection
+  - first start 2026-11-02 09:01:00.046Z, last start 2026-11-02 09:01:19.420Z; client banner SSH-2.0-libssh_0.10.6
+- Successful login: start 2026-11-02 09:01:22.420Z, end 2026-11-02 09:02:11.105Z; client banner SSH-2.0-OpenSSH_9.9p1 Debian-3 (different client = operator took over)
+- Interactive commands (invisible on the wire; only reply sizes are visible):
+  - 2026-11-02 09:01:33.208Z  `id`  reply ~118 B
+  - 2026-11-02 09:01:40.123Z  `uname -a`  reply ~196 B
+  - 2026-11-02 09:01:46.797Z  `cat /etc/passwd`  reply ~2310 B
+  - 2026-11-02 09:01:53.463Z  `ls -la /home`  reply ~742 B
+  - 2026-11-02 09:01:58.667Z  `ps aux`  reply ~14250 B
+  - 2026-11-02 09:02:04.956Z  `netstat -antp`  reply ~3124 B
+  - 2026-11-02 09:02:11.055Z  `exit`  reply ~0 B
+- Synthetic "passwd-style" data: the reply to `cat /etc/passwd` (~2310 B), which is NOT recoverable from encrypted SSH.
+- Expected Zeek conn.log rows: 13 (scan) + 36 (failed) + 1 (success) = 50; rows to port 22 = 38

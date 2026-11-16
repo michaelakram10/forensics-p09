@@ -1,0 +1,13 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	software
+#open	2026-11-16-19-31-10
+#fields	ts	host	host_p	software_type	name	version.major	version.minor	version.minor2	version.minor3	version.addl	unparsed_version
+#types	time	addr	port	enum	string	count	count	count	count	string	string
+1793712001.000440	192.168.56.10	-	HTTP::BROWSER	Firefox	128	0	-	-	-	Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0
+1793712001.004738	192.168.56.30	80	HTTP::SERVER	Apache	2	4	58	-	Debian	Apache/2.4.58 (Debian)
+1793712095.455818	192.168.56.10	-	HTTP::BROWSER	sqlmap	1	7	11	-	#stable	sqlmap/1.7.11#stable (https://sqlmap.org)
+1793712132.874793	192.168.56.10	-	HTTP::BROWSER	curl	8	5	0	-	-	curl/8.5.0
+#close	2026-11-16-19-31-10

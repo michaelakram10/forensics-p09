@@ -1,0 +1,12 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	software
+#open	2026-11-16-19-19-30
+#fields	ts	host	host_p	software_type	name	version.major	version.minor	version.minor2	version.minor3	version.addl	unparsed_version
+#types	time	addr	port	enum	string	count	count	count	count	string	string
+1793610060.050312	192.168.56.20	22	SSH::SERVER	OpenSSH	8	9	-	-	p1	OpenSSH_8.9p1 Ubuntu-3ubuntu0.10
+1793610060.051362	192.168.56.10	-	SSH::CLIENT	libssh	0	10	6	-	-	libssh_0.10.6
+1793610082.425078	192.168.56.10	-	SSH::CLIENT	OpenSSH	9	9	-	-	p1	OpenSSH_9.9p1 Debian-3
+#close	2026-11-16-19-19-30

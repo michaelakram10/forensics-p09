@@ -1,0 +1,4 @@
+{"ts":1793712001.00044,"host":"192.168.56.10","software_type":"HTTP::BROWSER","name":"Firefox","version.major":128,"version.minor":0,"unparsed_version":"Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"}
+{"ts":1793712001.004738,"host":"192.168.56.30","host_p":80,"software_type":"HTTP::SERVER","name":"Apache","version.major":2,"version.minor":4,"version.minor2":58,"version.addl":"Debian","unparsed_version":"Apache/2.4.58 (Debian)"}
+{"ts":1793712095.455818,"host":"192.168.56.10","software_type":"HTTP::BROWSER","name":"sqlmap","version.major":1,"version.minor":7,"version.minor2":11,"version.addl":"#stable","unparsed_version":"sqlmap/1.7.11#stable (https://sqlmap.org)"}
+{"ts":1793712132.874793,"host":"192.168.56.10","software_type":"HTTP::BROWSER","name":"curl","version.major":8,"version.minor":5,"version.minor2":0,"unparsed_version":"curl/8.5.0"}

@@ -3,12 +3,10 @@
 #empty_field	(empty)
 #unset_field	-
 #path	conn
-#open	2026-11-16-12-21-24
+#open	2026-11-16-19-31-10
 #fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	proto	service	duration	orig_bytes	resp_bytes	conn_state	local_orig	local_resp	missed_bytes	history	orig_pkts	orig_ip_bytes	resp_pkts	resp_ip_bytes	tunnel_parents	ip_proto
 #types	time	string	addr	port	addr	port	enum	string	interval	count	count	string	bool	bool	count	string	count	count	count	count	set[string]	count
-1794849515.666900	CW6CI51OSlJoe96LPi	127.0.0.1	50534	127.0.0.1	8080	tcp	http	5.021599	599	1793	SF	T	T	0	ShADadfF	5	867	5	2061	-	6
-1794849548.948875	CvGkR41LuDDk9mymhl	127.0.0.1	60324	127.0.0.1	8080	tcp	http	5.018995	639	1854	SF	T	T	0	ShADadfF	5	907	5	2122	-	6
-1794849567.881382	COMoBI2X4ryYOBPr78	127.0.0.1	49992	127.0.0.1	8080	tcp	http	5.009101	657	1807	SF	T	T	0	ShADadFf	6	977	5	2075	-	6
-1794849578.871968	CExODl1iW3T0oLTjY9	127.0.0.1	40214	127.0.0.1	8080	tcp	http	5.012402	654	361	SF	T	T	0	ShADadfF	5	922	5	629	-	6
-1794849607.510952	C3M5Lq3H60LVriBXCf	127.0.0.1	51776	127.0.0.1	8080	tcp	http	5.011056	684	1988	SF	T	T	0	ShADadfF	5	952	5	2256	-	6
-#close	2026-11-16-12-21-24
+1793712000.000000	CQNJPO3h8DCl3cTLlj	192.168.56.10	52110	192.168.56.30	80	tcp	http	10.127434	1200	16867	SF	T	T	0	ShADadFf	22	2080	21	17707	-	6
+1793712095.000000	C5vYjo1VA6Y8zLU6fa	192.168.56.10	52112	192.168.56.30	80	tcp	http	7.074153	3305	47176	SF	T	T	0	ShADadFf	55	5505	54	49336	-	6
+1793712132.074353	CXDk8n1RvflzmOxDce	192.168.56.10	52140	192.168.56.30	80	tcp	http	0.814951	184	28607	SF	T	T	0	ShADadFf	26	1224	25	29607	-	6
+#close	2026-11-16-19-31-10

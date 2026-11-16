@@ -1,0 +1,11 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	capture_loss
+#open	2026-11-16-19-31-10
+#fields	ts	ts_delta	peer	gaps	acks	percent_lost
+#types	time	interval	string	count	count	double
+1793872894.708548	74.809036	zeek	0	0	0.0
+1793873447.868145	553.159597	zeek	0	0	0.0
+#close	2026-11-16-19-31-10

