@@ -1,0 +1,3 @@
+cases/*/zeek/tsv/extract_files/
+__pycache__/
+*.pyc
