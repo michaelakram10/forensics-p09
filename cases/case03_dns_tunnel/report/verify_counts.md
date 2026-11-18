@@ -1,27 +1,20 @@
 # Verification Report - case03_dns_tunnel
 
-- Case ID: `case03`
-- Evidence source: `zeek/json/`
-- Timezone: UTC
-
 ## Results
+Zeek (dns.log, conn.log) compared with tshark on `raw/case03_dns_tunnel.pcap`.
 
-| Status | Verification | Observed result |
-|---|---|---|
-| PASS | Total DNS connections | 242 (expected 242) |
-| PASS | Total DNS transactions | 242 (expected 242) |
-| PASS | Baseline A queries | 40 (expected 40) |
-| PASS | Tunnel TXT queries | 202 (expected 202) |
-| PASS | Queries under tunnel parent domain | 202 (expected 202) |
+| Check | Zeek | tshark | Match |
+|---|---|---|---|
+| DNS queries | 445 | 445 | Yes |
+| DNS responses | 445 (all NOERROR) | 445 | Yes |
+| CNAME / MX / TXT | 164 / 150 / 131 | 164 (type 5) / 150 (type 15) / 131 (type 16) | Yes |
+| First query | 18:25:25.008145 UTC | epoch 1795026325.008145 | Yes |
+| Last query | 18:30:23.513247 UTC | epoch 1795026623.513247 | Yes |
+| Longest names | 240, 240, 181, 155, 155 | 240, 240, 181, 155, 155 | Yes |
+| Flow | 1 flow, udp/53, 298.506573 s, 27,322 B out, 52,063 B in | not compared | n/a |
 
 ## Summary
-
-- PASS: 5
-- FAIL: 0
-- INCONCLUSIVE: 0
+All compared values agree between the two tools. No discrepancies were found.
 
 ## Interpretation
-
-This report validates observable Zeek log records against the configured expected values.
-
-A matching count does not independently prove the underlying activity or establish packet-level integrity.
+Zeek and tshark independently reproduce the same query count, type distribution, timestamps and longest names, so the Zeek-based reconstruction is supported by the raw packets. Timezone note: `capinfos` prints the VM's local time (UTC-5, 13:25 to 13:30); all other times in this report are UTC. Zeek's flow byte counts were not independently recomputed from packets.
